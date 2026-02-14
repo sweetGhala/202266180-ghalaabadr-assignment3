@@ -105,7 +105,7 @@ Detailed documentation is available in docs/ai-usage-report.md.
 ![Homepage Preview](assets/images/img_3.png)
 ## Live Demo
 The project is deployed using GitHub Pages:
-[Live Preview Link]
+[https://sweetghala.github.io/202266180-GhalaaBadr-assignment1/]
 ## Known Limitations
 - Contact form does not connect to a backend server.
 - AI enhancement feature is a simulated prototype.
