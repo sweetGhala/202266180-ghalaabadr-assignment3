@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ghala's personal portfolio website" />
+    <title>Ghala Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+<a class="skip-link" href="#about">Skip to content</a>
+
+<header>
+    <nav aria-label="Primary">
+        <h2 class="logo">Ghala</h2>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button
+                id="themeToggle"
+                class="theme-btn"
+                type="button"
+                aria-pressed="false"
+                aria-label="Toggle dark mode"
+        >
+            🌙 Dark
+        </button>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h1>Hello, I'm Ghala</h1>
+        <p>I am a Computer Science student passionate about web development and technology.</p>
+        <p>I enjoy building clean and responsive web applications.</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">My Projects</h2>
+
+        <div class="projects-grid">
+            <article class="project">
+                <h3>Task Manager App</h3>
+                <img src="assets/images/img_1.png" alt="Task Manager App preview">
+                <p>A simple web application that helps users organize daily tasks.</p>
+                <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            </article>
+
+            <article class="project">
+                <h3>To-Do List </h3>
+                <img src="assets/images/img.png" alt="To-Do List preview">
+                <p>A minimal task manager concept description for portfolio showcase.</p>
+                <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact Me</h2>
+
+        <form id="contactForm" novalidate>
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Ghala. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
