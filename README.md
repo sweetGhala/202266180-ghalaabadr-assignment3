@@ -9,11 +9,10 @@ It builds upon Assignment 1 by introducing dynamic features, improved user exper
 The website showcases personal information, selected projects, and includes an interactive contact form with validation and user feedback.
 
 ---
-
 ## Live Demo
 
 The project is deployed using GitHub Pages:  
-https://sweetghala.github.io/202266180-GhalaaBadr-assignment2/
+[Live Website](https://sweetghala.github.io/202266180-ghalabadr-assignment2/)
 
 ---
 
