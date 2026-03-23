@@ -41,7 +41,7 @@ AI was not used to generate the full project automatically.
 
 ---
 
-## 4. Modifications and Validation
+## 4. Modifications and Validation 
 
 All AI-generated suggestions were manually reviewed and tested before integration.
 

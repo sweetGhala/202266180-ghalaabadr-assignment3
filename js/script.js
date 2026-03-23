@@ -40,7 +40,7 @@ function getDefaultTheme() {
 const stored = getStoredTheme();
 applyTheme(stored ?? getDefaultTheme());
 
-// Toggle theme
+// Toggle themes
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
         const isDark = root.classList.contains("dark");

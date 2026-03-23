@@ -208,5 +208,5 @@ Detailed usage is documented in:
 
 ## Development Notes
 
-This project focuses on practical interactivity, usability, and clean structure rather than overly complex design.  
+This project focuses on practical interactivity,  usability, and clean structure rather than overly complex design.  
 All features were implemented to meet assignment requirements while maintaining scalability for future improvements.

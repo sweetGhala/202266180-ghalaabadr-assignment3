@@ -1,7 +1,7 @@
 # Technical Documentation – Assignment 2
 
 ## Project Structure
-
+ 
 The project follows this folder structure:
 ```bash
 assignment-2/
