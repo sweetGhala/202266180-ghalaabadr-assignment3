@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a class="skip-link" href="#about">Skip to content</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header>
     <nav aria-label="Primary">
@@ -33,14 +33,14 @@
     </nav>
 </header>
 
-<main>
-    <section id="about">
+<main id="main-content">
+    <section id="about" class="fade-in">
         <h1>Hello, I'm Ghala</h1>
         <p>I am a Computer Science student passionate about web development and technology.</p>
         <p>I enjoy building clean and responsive web applications.</p>
     </section>
 
-    <section id="projects" aria-labelledby="projects-title">
+    <section id="projects" class="fade-in" aria-labelledby="projects-title">
         <h2 id="projects-title">My Projects</h2>
 
         <div class="projects-grid">
@@ -49,18 +49,33 @@
                 <img src="assets/images/img_1.png" alt="Task Manager App preview">
                 <p>A simple web application that helps users organize daily tasks.</p>
                 <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+
+                <button class="details-btn" type="button" aria-expanded="false" aria-controls="project1-details">Show Details</button>
+
+                <div id="project1-details" class="project-details" hidden>
+                    <p>This project helps users add, organize, and manage tasks in a simple interface.</p>
+                    <p>It focuses on usability, clean layout, and responsive design.</p>
+                </div>
             </article>
 
+
             <article class="project">
-                <h3>To-Do List </h3>
+                <h3>To-Do List</h3>
                 <img src="assets/images/img.png" alt="To-Do List preview">
                 <p>A minimal task manager concept description for portfolio showcase.</p>
                 <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+
+                <button class="details-btn" type="button" aria-expanded="false" aria-controls="project2-details">Show Details</button>
+
+                <div id="project2-details" class="project-details" hidden>
+                    <p>This project presents a simple to-do list concept for tracking daily activities.</p>
+                    <p>It highlights basic front-end structure and user-friendly interaction.</p>
+                </div>
             </article>
         </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
+    <section id="contact" class="fade-in" aria-labelledby="contact-title">
         <h2 id="contact-title">Contact Me</h2>
 
         <form id="contactForm" novalidate>

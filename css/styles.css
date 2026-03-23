@@ -25,6 +25,16 @@ body {
     line-height: 1.6;
     background-color: var(--bg);
     color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+header,
+footer,
+.project,
+.project-details,
+input,
+textarea,
+button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 /* Skip link (accessibility) */
@@ -119,14 +129,28 @@ nav {
     border-radius: 12px;
     box-shadow: var(--shadow);
     min-height: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
 .project img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 12px;
     object-fit: cover;
+    display: block;
 }
 
+.project-details {
+    margin-top: 14px;
+    padding: 12px;
+    background: rgba(209, 107, 165, 0.08);
+    border-radius: 10px;
+}
 
 /* Form */
 form {
@@ -156,7 +180,17 @@ textarea:focus {
 
 .form-status {
     margin-top: 12px;
-    min-height: 1.2em; /* keeps layout stable */
+    min-height: 1.2em;
+}
+
+.form-status.success {
+    color: #0a7a28;
+    font-weight: bold;
+}
+
+.form-status.error {
+    color: #b00020;
+    font-weight: bold;
 }
 
 /* Buttons */
@@ -228,6 +262,10 @@ html.dark .project {
     border: 1px solid #2a2a2a;
 }
 
+html.dark .project-details {
+    background: rgba(255, 230, 242, 0.08);
+}
+
 html.dark input,
 html.dark textarea {
     background: #1b1b1b;
@@ -263,6 +301,22 @@ html.dark button.theme-btn:hover {
     color: #111;
 }
 
+/* Animation */
+.fade-in {
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Mobile tap highlight */
 a,
 button {
@@ -295,7 +349,11 @@ button {
     html {
         scroll-behavior: auto;
     }
-    button {
+
+    button,
+    .project,
+    .fade-in {
         transition: none;
+        animation: none;
     }
 }

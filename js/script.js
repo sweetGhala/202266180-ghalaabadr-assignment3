@@ -49,6 +49,28 @@ if (themeToggle) {
         storeTheme(nextTheme);
     });
 }
+const detailButtons = document.querySelectorAll(".details-btn");
+
+detailButtons.forEach((button) => {
+    button.setAttribute("aria-expanded", "false");
+
+    button.addEventListener("click", () => {
+        const details = button.nextElementSibling;
+        if (!details) return;
+
+        const isHidden = details.hasAttribute("hidden");
+
+        if (isHidden) {
+            details.removeAttribute("hidden");
+            button.textContent = "Hide Details";
+            button.setAttribute("aria-expanded", "true");
+        } else {
+            details.setAttribute("hidden", "");
+            button.textContent = "Show Details";
+            button.setAttribute("aria-expanded", "false");
+        }
+    });
+});
 
 /* Contact form: front-end only, but with a good UX message */
 const contactForm = document.getElementById("contactForm");
@@ -64,11 +86,20 @@ if (contactForm && formStatus) {
 
         if (!name || !email || !message) {
             formStatus.textContent = "Please fill in all fields.";
+            formStatus.className = "form-status error";
             return;
         }
 
-        // Front-end only: simulate a successful send
-        formStatus.textContent = "Message sent! (Demo mode — no backend connected)";
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            formStatus.textContent = "Please enter a valid email address.";
+            formStatus.className = "form-status error";
+            return;
+        }
+
+        formStatus.textContent = "Message sent successfully!";
+        formStatus.className = "form-status success";
         contactForm.reset();
     });
 }
