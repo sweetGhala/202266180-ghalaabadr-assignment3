@@ -40,11 +40,23 @@
         <p>I enjoy building clean and responsive web applications.</p>
     </section>
 
+
+
     <section id="projects" class="fade-in" aria-labelledby="projects-title">
         <h2 id="projects-title">My Projects</h2>
 
+        <div class="projects-controls">
+            <label for="filter">Filter:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+            </select>
+        </div>
+
         <div class="projects-grid">
-            <article class="project">
+            <article class="project" data-tech="js">
                 <h3>Task Manager App</h3>
                 <img src="assets/images/img_1.png" alt="Task Manager App preview">
                 <p>A simple web application that helps users organize daily tasks.</p>
@@ -59,7 +71,7 @@
             </article>
 
 
-            <article class="project">
+            <article class="project" data-tech="js">
                 <h3>To-Do List</h3>
                 <img src="assets/images/img.png" alt="To-Do List preview">
                 <p>A minimal task manager concept description for portfolio showcase.</p>
@@ -72,6 +84,13 @@
                     <p>It highlights basic front-end structure and user-friendly interaction.</p>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <section id="github-projects">
+        <h2>GitHub Projects</h2>
+        <div id="github-container">
+            <p>Loading projects...</p>
         </div>
     </section>
 

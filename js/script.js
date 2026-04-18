@@ -103,3 +103,57 @@ if (contactForm && formStatus) {
         contactForm.reset();
     });
 }
+const githubContainer = document.getElementById("github-container");
+
+async function loadGitHubRepos() {
+    if (!githubContainer) return;
+
+    try {
+        const response = await fetch("https://api.github.com/users/sweetGhala/repos");
+
+        if (!response.ok) {
+            throw new Error("Error fetching repos");
+        }
+
+        const repos = await response.json();
+
+        githubContainer.innerHTML = "";
+
+        repos.slice(0, 5).forEach(repo => {
+            const card = document.createElement("div");
+            card.className = "project";
+
+            card.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "This is one of my GitHub projects."}</p>
+                <a href="${repo.html_url}" target="_blank">View Project</a>
+            `;
+
+            githubContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        githubContainer.innerHTML = "<p>Failed to load GitHub projects.</p>";
+    }
+}
+
+loadGitHubRepos();
+
+const filter = document.getElementById("filter");
+const projects = document.querySelectorAll(".project");
+
+if (filter) {
+    filter.addEventListener("change", () => {
+        const selected = filter.value;
+
+        projects.forEach(project => {
+            const tech = project.getAttribute("data-tech");
+
+            if (selected === "all" || tech === selected) {
+                project.style.display = "block";
+            } else {
+                project.style.display = "none";
+            }
+        });
+    });
+}

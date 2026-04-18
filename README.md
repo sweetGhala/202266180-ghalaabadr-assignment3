@@ -1,75 +1,93 @@
-# 202266180 – Ghala Badr – Assignment 2
+# 202266180 – Ghala Badr – Assignment 3
 
 ## Project Overview
 
-This project is a responsive and interactive personal portfolio website developed using HTML5, CSS3, and JavaScript.
+This project is an advanced version of a personal portfolio website developed using HTML5, CSS3, and JavaScript.
 
-It builds upon Assignment 1 by introducing dynamic features, improved user experience, accessibility enhancements, and AI-assisted development practices.
+It builds upon Assignment 2 by adding dynamic features, external API integration, improved application logic, and enhanced user experience.
 
-The website showcases personal information, selected projects, and includes an interactive contact form with validation and user feedback.
+The website showcases personal information, projects, and includes interactive features such as filtering, theme management, and real-time data from GitHub.
 
 ---
+
 ## Live Demo
 
 The project is deployed using GitHub Pages:  
-[Live Website](https://sweetghala.github.io/202266180-ghalabadr-assignment2/)
+[Live Website](https://sweetghala.github.io/202266180-ghalaabadr-assignment3/)
 
 ---
 
 ## Features
 
-- About Me section  
-- Projects showcase (expand/collapse interaction)  
-- Responsive design (mobile, tablet, desktop)  
-- Dark / Light mode toggle  
-- Theme preference saved using localStorage  
-- Automatic system theme detection  
-- Accessible form validation with user feedback  
-- Smooth scrolling navigation  
-- Expand / collapse project details using JavaScript  
-- Hover effects and transition animations  
-- Interactive UI elements responding to user actions (clicks, theme changes, form input) 
-- Clear user feedback messages (error, success, and validation states)
+- About Me section
+- Projects showcase with expand/collapse interaction
+- Responsive design (mobile, tablet, desktop)
+- Dark / Light mode toggle
+- Theme preference saved using localStorage
+- Automatic system theme detection
+- Contact form with validation and user feedback
+- GitHub API integration (dynamic project loading)
+- Project filtering by technology
+- Error handling for API requests
+- Smooth scrolling navigation
+- Hover effects and transition animations
+- Interactive UI elements responding to user actions
+- Dynamic rendering of API data using JavaScript
 
 ---
 
 ## Assignment Requirements Covered
 
-### Dynamic Content
-Project details can be expanded and collapsed using JavaScript based on user interaction. The theme toggle also dynamically updates the interface.
-
-### Data Handling
-Theme preference is stored using localStorage. The contact form validates user input before submission.
-
-### Animation and Transitions
-Smooth scrolling, hover effects, and theme transitions are implemented to improve user experience.
-
-### Error Handling and User Feedback
-The form provides clear validation messages, success feedback, and prevents submission when inputs are invalid.
-
-### AI Enhancement
-AI tools were used to improve code structure, accessibility, and responsiveness. Full details are documented in `docs/ai-usage-report.md`.
+### API Integration
+The website connects to the GitHub API to fetch real-time project data and display it dynamically.  
+Error handling is implemented to show a user-friendly message if the API request fails.
 
 ---
 
-## Progress Beyond Assignment 1
+### Complex Logic
+Projects can be filtered based on technology (HTML, CSS, JavaScript).  
+This feature uses conditional logic to dynamically show or hide projects.
 
-Compared to Assignment 1, this project includes:
+---
 
-- Added JavaScript-based interactivity (expand/collapse functionality)  
-- Implemented dark/light mode with persistent user preference  
-- Improved accessibility using ARIA attributes and semantic HTML  
-- Added client-side form validation with feedback messages  
-- Enhanced responsive layout and usability across devices  
-- Improved UI/UX with transitions and smoother interactions  
+### State Management
+The application stores the user’s theme preference using localStorage.  
+The theme is restored automatically when the user revisits the website.
+
+---
+
+### Performance Optimization
+- Efficient CSS and JavaScript structure
+- Optimized layout and responsive design
+- Minimal redundant code
+
+---
+
+### Error Handling and User Feedback
+- Contact form validation prevents invalid input
+- User-friendly success and error messages
+- API failure displays a clear fallback message
+
+---
+
+## Progress Beyond Assignment 2
+
+Compared to Assignment 2, this project includes:
+
+- Integrated external API (GitHub)
+- Added project filtering functionality
+- Improved dynamic content rendering
+- Enhanced interactivity and logic
+- Better user feedback and error handling
 
 ---
 
 ## Technologies Used
 
-- HTML5  
-- CSS3 (Flexbox, Grid, Media Queries, CSS Variables)  
-- JavaScript (DOM manipulation, localStorage, matchMedia)  
+- HTML5
+- CSS3 (Flexbox, Grid, Media Queries, CSS Variables)
+- JavaScript (DOM manipulation, localStorage, fetch API)
+- GitHub REST API
 
 ---
 
@@ -78,58 +96,65 @@ Compared to Assignment 1, this project includes:
 ### Theme System
 
 Dark mode is implemented by applying a class to the `<html>` element.  
-Theme colors are controlled using CSS variables for maintainability.
+Theme colors are controlled using CSS variables.
 
 User preference is stored using localStorage.  
 If no preference exists, the system detects the user's device setting using:
 
 `window.matchMedia('(prefers-color-scheme: dark)')`
 
-The toggle button updates:
+---
 
-- Text label  
-- aria-pressed state  
-- aria-label  
+### GitHub API
+
+Projects are fetched using the GitHub REST API:
+`https://api.github.com/users/{username}/repos`
+
+The data is dynamically rendered using JavaScript.  
+Only selected repositories are displayed, and error handling ensures a fallback message is shown if the API fails.
 
 ---
 
-### Responsive Design
+### Project Filtering
 
-The layout uses:
+Projects include a custom attribute (`data-tech`) that defines the technology used.  
+JavaScript is used to filter projects based on user selection.
 
-- CSS Grid for project cards  
-- Flexbox for navigation and form layout  
-- Media queries for smaller screens  
+---
 
-On smaller devices:
+### Contact Form
 
-- Navigation stacks vertically  
-- Project layout becomes a single column  
-- Form expands to full width  
+- Validates required fields
+- Checks email format
+- Displays success/error messages
+- Prevents invalid submission
 
 ---
 
 ## Accessibility
 
-- Semantic HTML elements (main, section, article)  
-- Skip-to-content link  
-- Visible focus styles  
-- ARIA attributes for interactive elements  
-- Support for reduced motion preferences  
-- Form status updates using `aria-live`  
+- Semantic HTML elements
+- Skip-to-content link
+- Visible focus styles
+- ARIA attributes for accessibility
+- Reduced motion support
+- Live region updates for form feedback
 
 ---
+## AI Usage Summary
 
-## Contact Form
+AI tools were used during development to:
 
-The form includes client-side validation:
+- Assist in implementing GitHub API integration
+- Improve JavaScript logic (filtering and theme handling)
+- Enhance accessibility and user interface behavior
+- Support debugging and fixing errors
 
-- Prevents submission if fields are empty  
-- Displays user-friendly error messages  
-- Shows confirmation feedback when valid  
-- Uses accessible live regions for screen readers  
+All AI-generated suggestions were carefully reviewed, tested, and modified before being included in the final project.
 
----
+Detailed usage is documented in:  
+`docs/ai-usage-report.md`
+
 ## Project Structure
 
 ```bash
@@ -144,68 +169,7 @@ project-folder/
 │── docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
-```
+```bash
+project-folder/
+...
 
-
----
-
-## How to Run
-
-1. Clone or download the repository
-2. Open the project folder
-3. Open `index.html` in your browser
-
-No installation required.
-
----
-
-## Browser Compatibility
-
-Tested on:
-
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-
----
-
-## AI Usage Summary
-
-AI tools were used to:
-
-- Improve theme toggle logic
-- Refactor CSS using variables
-- Enhance accessibility features
-- Support responsive design improvements
-
-All AI-generated suggestions were reviewed, modified, and tested before integration.
-
-Detailed usage is documented in:  
-`docs/ai-usage-report.md`
-
----
-
-## Screenshots
-
-*(Add your images here)*
-
----
-
-## Known Limitations
-
-- Contact form does not connect to a backend service
-
----
-
-## Future Improvements
-
-- Add backend integration for form submission
-- Include more portfolio projects
-- Enhance animations and micro-interactions
-
----
-
-## Development Notes
-
-This project focuses on practical interactivity,  usability, and clean structure rather than overly complex design.  
-All features were implemented to meet assignment requirements while maintaining scalability for future improvements.

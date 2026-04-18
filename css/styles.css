@@ -357,3 +357,17 @@ button {
         animation: none;
     }
 }
+.projects-controls {
+    margin: 15px 0;
+}
+
+.projects-controls label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.projects-controls select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
