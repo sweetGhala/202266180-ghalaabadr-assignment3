@@ -169,7 +169,6 @@ project-folder/
 │── docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
-```bash
-project-folder/
-...
+```
+
 
