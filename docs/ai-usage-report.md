@@ -1,10 +1,10 @@
-# AI Usage Report – Assignment 2
+# AI Usage Report – Assignment 3
 
 ## 1. AI Tools Used
 
 The following AI tool was used during development:
 
-- ChatGPT (for code review, refactoring suggestions, and accessibility improvements)
+- ChatGPT (for code review, refactoring suggestions, debugging, and feature implementation support)
 
 No code was blindly copied without review or modification.
 
@@ -19,7 +19,10 @@ AI was used to assist in improving:
 - Accessibility best practices (ARIA attributes, focus states)
 - CSS variable refactoring for maintainability
 - Responsive layout optimization
-- Implementing a show/hide project details interaction using JavaScript
+- Implementing show/hide project details using JavaScript
+- GitHub API integration (fetching and displaying data dynamically)
+- Project filtering logic using JavaScript
+- Error handling for API requests
 
 AI was not used to generate the full project automatically.
 
@@ -39,20 +42,28 @@ AI was not used to generate the full project automatically.
 
 "Convert hard-coded CSS colors into CSS variables and improve dark mode structure."
 
+**Example Prompt 4:**
+
+"How can I fetch data from the GitHub API and display repositories dynamically using JavaScript?"
+
 ---
 
-## 4. Modifications and Validation 
+## 4. Modifications and Validation
 
 All AI-generated suggestions were manually reviewed and tested before integration.
 
 The following changes were made after reviewing AI suggestions:
 
-- Moved dark mode class from `<body>` to `<html>` for better theme control.
-- Added `aria-pressed` and `aria-label` updates to the theme toggle button.
-- Implemented `try-catch` blocks around localStorage usage to prevent potential errors.
-- Added reduced motion support using `prefers-reduced-motion`.
-- Adjusted CSS variables to improve readability and maintainability.
-- Improved validation feedback messages to provide clearer user guidance.
+- Moved dark mode class from `<body>` to `<html>` for better theme control
+- Added `aria-pressed` and `aria-label` updates to the theme toggle button
+- Implemented `try-catch` blocks around localStorage usage to prevent errors
+- Added reduced motion support using `prefers-reduced-motion`
+- Refactored CSS using variables for better maintainability
+- Improved validation feedback messages for better user experience
+- Implemented API fetching using the `fetch()` function
+- Added error handling for failed API requests
+- Limited displayed repositories using array slicing
+- Filtered repositories to improve relevance
 
 All changes were tested in multiple browsers to ensure consistent behavior.
 
@@ -62,15 +73,19 @@ All changes were tested in multiple browsers to ensure consistent behavior.
 
 The theme system works by:
 
-1. Checking localStorage for a stored theme preference.
-2. If none exists, detecting the system’s preferred color scheme.
-3. Applying a CSS class to the `<html>` element.
-4. Updating button accessibility attributes.
-5. Storing user selection for future visits.
+1. Checking localStorage for a stored theme preference
+2. If none exists, detecting the system’s preferred color scheme
+3. Applying a CSS class to the `<html>` element
+4. Updating button accessibility attributes
+5. Storing user selection for future visits
+
+The GitHub API integration works by sending a request using `fetch()` to retrieve repository data. The response is converted to JSON and dynamically rendered into the DOM.
+
+The filtering system works by assigning a custom attribute (`data-tech`) to each project. JavaScript listens for user input and dynamically shows or hides projects based on the selected filter.
 
 The responsive layout is implemented using CSS Grid and Flexbox, with a mobile breakpoint at `600px`.
 
-Accessibility enhancements ensure keyboard navigation support and visible focus indicators.
+Accessibility improvements ensure keyboard navigation support and visible focus indicators.
 
 ---
 
@@ -81,22 +96,26 @@ All final decisions, structure, and validation were performed manually.
 
 No AI-generated code was integrated without testing and modification.
 
+---
+
 ## 7. Learning Outcomes
 
 Using AI during this assignment helped me better understand several front-end development concepts.
 
-I learned how to structure JavaScript code more clearly, especially when implementing the theme toggle logic and managing theme persistence using localStorage.
+I improved my understanding of JavaScript logic, especially when working with API integration and filtering features.
 
-AI suggestions also helped me improve accessibility by using ARIA attributes and visible focus indicators.
+I also learned how to manage application state using localStorage and improve accessibility using ARIA attributes and proper focus handling.
 
-Additionally, I improved my understanding of CSS variables and how they simplify theme management for light and dark modes.
+Additionally, I gained a better understanding of CSS variables and how they simplify theme management.
+
+---
 
 ## 8. Challenges Encountered
 
-One challenge was ensuring that the dark mode system worked consistently across different browsers.
+One challenge was ensuring that the GitHub API data was correctly fetched and displayed dynamically.
 
-Another challenge was organizing CSS variables correctly so that both light and dark themes updated properly.
+Another challenge was implementing filtering logic in a way that updates the UI correctly based on user selection.
 
-I also had to review AI suggestions carefully to ensure they matched my project structure and did not introduce unnecessary complexity.
+I also faced difficulties ensuring consistency across different browsers and handling edge cases such as API failure.
 
-Testing each change helped ensure the final implementation worked correctly.
+Reviewing and modifying AI suggestions carefully helped ensure that the final implementation was correct and suitable for the project.

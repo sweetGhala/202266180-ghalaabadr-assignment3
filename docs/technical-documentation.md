@@ -1,10 +1,11 @@
-# Technical Documentation – Assignment 2
+# Technical Documentation – Assignment 3
 
 ## Project Structure
- 
+
 The project follows this folder structure:
+
 ```bash
-assignment-2/
+assignment-3/
 ├── README.md
 ├── index.html
 ├── css/
@@ -17,87 +18,131 @@ assignment-2/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
 ```
----
-    
+
+
 ## 1. Architecture Overview
 
 This project follows a simple front-end architecture:
 
-- HTML provides semantic page structure.
-- CSS handles layout, styling, responsiveness, and theming.
-- JavaScript manages interactivity and theme state persistence.
+- HTML provides semantic page structure  
+- CSS handles layout, styling, responsiveness, and theming  
+- JavaScript manages interactivity, API integration, and state persistence  
 
-All functionality is implemented client-side with no backend integration.
+All functionality is implemented on the client side with no backend integration.
 
 ---
 
 ## 2. Theme System Design
 
-The dark/light theme system operates as follows:
+The dark/light theme system works as follows:
 
-1. On page load, JavaScript checks localStorage for a saved theme.
-2. If no stored preference exists, the system detects the user’s device preference using prefers-color-scheme.
-3. A "dark" class is applied to the <html> element.
-4. CSS variables dynamically update all theme colors.
-5. When the toggle button is clicked, the theme updates and is saved in localStorage.
+- On page load, JavaScript checks `localStorage` for a saved theme  
+- If no preference exists, the system detects the user’s device setting using `prefers-color-scheme`  
+- A `dark` class is applied to the `<html>` element  
+- CSS variables update all colors dynamically  
+- When the toggle button is clicked, the theme is updated and saved in `localStorage`  
 
-Using CSS variables allows centralized theme control and easier maintenance.
-
----
-
-## 3. State Persistence
-
-Theme preference is stored using the browser’s localStorage API.
-
-A try-catch block is implemented to prevent potential storage-related errors (e.g., private browsing restrictions).
-
-This ensures stable behavior across browsers.
+This approach ensures consistency and easy maintenance.
 
 ---
 
-## 4. Responsive Layout Strategy
+## 3. GitHub API Integration
+
+The project integrates with the GitHub REST API to fetch repository data dynamically.
+
+JavaScript uses the `fetch()` function to send a request to:
+https://api.github.com/users/sweetGhala/repos
+
+The response is converted into JSON and displayed dynamically as project cards.
+
+Error handling is implemented to show a fallback message if the request fails.
+
+---
+
+## 4. Project Filtering Logic
+
+Each project includes a custom attribute:
+
+`data-tech`
+This represents the technology used (HTML, CSS, JavaScript).
+
+When the user selects a filter:
+
+- JavaScript reads the selected value  
+- Compares it with each project’s `data-tech`  
+- Shows or hides projects accordingly  
+
+This demonstrates conditional logic and DOM manipulation.
+
+---
+
+## 5. State Persistence
+
+Theme preference is stored using `localStorage`.
+
+- The selected theme is saved when the user toggles it  
+- It is restored automatically on page reload  
+
+A `try-catch` block is used to prevent errors in restricted environments.
+
+---
+
+## 6. Responsive Layout Strategy
 
 The layout uses:
 
-- Flexbox for navigation alignment.
-- CSS Grid for project card layout.
-- A mobile breakpoint at 600px.
+- Flexbox for navigation and alignment  
+- CSS Grid for project layout  
+- Media queries for responsiveness  
 
-On smaller screens:
-- Navigation elements stack vertically.
-- The project grid becomes a single column.
-- Form elements expand to full width.
+At smaller screen sizes:
 
----
-
-## 5. Accessibility Considerations
-
-The project includes several accessibility improvements:
-
-- Semantic HTML elements (main, section, article).
-- Skip-to-content link.
-- ARIA attributes for interactive elements.
-- Visible focus indicators for keyboard users.
-- Reduced motion support using prefers-reduced-motion.
+- Navigation stacks vertically  
+- Projects display in a single column  
+- Forms expand to full width  
 
 ---
 
-## 6. Performance Considerations
+## 7. Accessibility Considerations
 
-- No external libraries were used.
-- Lightweight JavaScript implementation.
-- Minimal DOM manipulation.
-- Efficient CSS variable usage reduces repetition.
-- No heavy animations or unnecessary rendering.
+The project includes accessibility improvements:
 
-## 7. Security Considerations
+- Semantic HTML elements (`main`, `section`, `article`)  
+- Skip-to-content link  
+- ARIA attributes for interactive elements  
+- Visible focus indicators  
+- Support for reduced motion (`prefers-reduced-motion`)  
 
-- No sensitive data is stored.
-- localStorage is wrapped in try-catch for stability.
-- No external scripts are used.
+---
 
-## 8. Testing Strategy
+## 8. Performance Considerations
 
-- Cross-browser testing (Chrome, Firefox, Edge, Safari)
-- Responsive testing using DevTools device emulation
-- Keyboard navigation testing for accessibility
+- No external libraries are used  
+- Lightweight JavaScript implementation  
+- Minimal DOM manipulation  
+- Efficient use of CSS variables  
+- No unnecessary rendering or heavy animations  
+
+---
+
+## 9. Security Considerations
+
+- No sensitive data is stored  
+- `localStorage` usage is wrapped in `try-catch`  
+- No external scripts or unsafe operations are used  
+
+---
+
+## 10. Testing Strategy
+
+The project was tested using:
+
+- Google Chrome  
+- Mozilla Firefox  
+- Microsoft Edge  
+
+Additional testing included:
+
+- Responsive testing using browser DevTools  
+- Keyboard navigation testing  
+- Validation of form behavior and error handling  
